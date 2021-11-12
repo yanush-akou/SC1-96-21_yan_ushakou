@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @import "css_forpython2.css" screen;
+        @import "css_forpython2_print.css" print;
+        
+    </style>
+</head>
+<body>
+    <h1>HOW-TO: Программа на python, Часть 3</h1>
+    <p> <img src="Icon-Python.7bb116a5.png" alt="img_python" title="Python_logo" align="right" >
+
+    </p>
+    <ul>
+        <li> <a href="04_python1.html"><em>Программа на Python — часть 1</em></a> </li>
+        <li> <a href="04_python2.html"><em>Программа на Python — часть 2</em></a> </li>   
+        <li> <a href="04_python3.html"><em>Программа на Python — часть 3</em></a> </li> 
+    </ul>
+    <a name="Contents"></a>
+    <H2>Содержание</H2>
+    <h3>HOW-TO: Программа на Python, Часть 3 </h3>
+    <ul>
+        <li> <a href="#Modules">Модули</a> </li>
+        <li> <a href="#Functions">Функции</a> </li>
+        <br>
+    <hr>
+    <p>В прошлый раз мы изучали списки, подстановку переменных, комментарии, сравнение и
+        присвоение, операторы if и while. Я обещал, что в этой части мы изучим модули и
+        функции. Давайте начнём.
+        </p>
+    <a name="Modules"></a>
+    <H2>Модули</H2>
+    <a href="#Contents">К содержанию</a>
+
+    <p> Модули предлагают способ расширить программирование на Python. Вы можете создать
+        свои модули, использовать те, которые поставляются с Python или которые написали
+        другие. В самом Python есть сотни модулей, которые облегчают написание программ.
+        Список модулей, поставляемых с Python, находится по адресу:
+        <a href=" http://docs.python.org/modindex.html"> <i> http://docs.python.org/modindex.html</i> </a>. Некоторые модули предназначены для определённых
+        операционных систем, но большинство из них кроссплатформенные и работают
+        одинаково на<a href="https://ru.wikipedia.org/wiki/Linux" target="_blank" > Linux</a>,<a href="https://ru.wikipedia.org/wiki/MacOS" target="_blank"> Mac</a> и <a href="https://en.wikipedia.org/wiki/Microsoft_Windows" target="blank">Microsoft Windows</a>. Для использования внешнего модуля
+        необходимо импортировать его в программу. Один из модулей, поставляемых с Python,
+        называется «random». Он даёт возможность генерировать псевдослучайные числа. Мы
+        используем этот модуль в нашем первом примере.</p>
+        <br>
+<pre>
+#=======================================
+# random_example.py
+# Module example using the random module
+#=======================================
+import random
+# print 14 random integers
+for cntr in range(1,15):
+    print random.randint(1,10)</pre>
+<p> Давайте разберём код по строкам. Первые четыре строки — это комментарии, о которых
+    мы говорили в прошлый раз. Пятая строка говорит Python, что нужно использовать
+    модуль «random». Мы должны явно указать Python на это.</p>
+    <hr>
+<a name="Functions"></a>
+<H2>Функции</H2>
+<a href="#Contents">К содержанию</a>
+<p>
+    Когда мы импортировали модуль random, мы использовали функцию randint(). Функция
+    — это блок кода, который создан для того, чтобы вызывать его в программе, обычно,
+    более одного раза. Это упрощает работу над программой и предотвращает набор одного и
+    того же кода снова и снова. Грубо говоря, если вам нужно написать некоторый код
+    больше, чем 1-2 раза, стоит сделать его функцией. Хотя следующие два примера очень
+    простые, это хорошие примеры функций. Теперь мы хотим, скажем, взять два числа,
+    сложить их, перемножить, вычесть одно из другого, затем вывести на экран эти числа и
+    результаты одновременно. Допустим, нам нужно сделать это три раза для трёх наборов
+    чисел. Тогда наш пример будет выглядеть как код ниже.
+</p>
+<pre>
+    #silly example
+    print '%d + %d = %d ' % (1,2,1+2)
+    print '%d * %d = %d ' % (1,2,1*2)
+    print '%d - %d = %d ' % (1,2,1-2)
+    print '\n'
+    print '%d + %d = %d ' % (1,4,1+4)
+    print '%d * %d = %d ' % (1,4,1*4)
+    print '%d - %d = %d ' % (1,4,1-4)
+    print '\n'
+    print '%d + %d = %d ' % (10,5,10+5)
+    print '%d * %d = %d ' % (10,5,10*5)
+    print '%d - %d = %d ' % (10,5,10-5)
+    print '\n'
+    </pre>
+    <p>
+        Здесь нужно не только набрать много текста, но и непременно возникнут ошибки как при
+написании, так и при внесении изменений. Вместо этого мы создадим функцию, которую
+назовём <i> <b>«DoTwo»</b> </i>. Она будет каждый раз брать два числа, проводить математические
+операции и выводить результат. Начнём с ключевого слова <i> <b>««def»»</b> </i>, которое сигнализирует
+о том, что мы собираемся определить функцию. После слова  <i> <b>««def»»</b> </i> добавим название
+функции и список параметров, если таковые имеются, в круглых скобках. Эту строку
+необходимо завершить двоеточием. Код функции набирается с отступом. Наш
+улучшенный простой пример <u>(№2)</u> показан ниже
+    </p>
+    <pre>
+        #silly example 2...still silly, but better
+        def DoTwo(num1,num2):
+                print '%d + %d = %d ' % (num1,num2,num1+num2)
+                print '%d * %d = %d ' % (num1,num2,num1*num2)
+                print '%d - %d = %d ' % (num1,num2,num1-num2)
+                print '\n'
+        DoTwo(1,2)
+        DoTwo(1,4)
+        DoTwo(10,5)
+        </pre>
+    <p>
+        Как видите, здесь написано меньше кода — 8 строк вместо 12. Если нам нужно будет чтолибо поменять в функции, мы сможем сделать это, не создавая проблем для нашей
+        программы. Чтобы вызвать функцию, нужно написать её имя и параметры.</p>
+        <table width="1470" >
+            <tr> 
+                <td> <a href="04_python2.html"> <img src="data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%16%00%00%00%16%08%03%00%00%00%F3j%9C%09%00%00%00%09pHYs%00%00%0B%0D%00%00%0B%0D%01%ED%07%C0%2C%00%00%00%07tIME%07%D3%09%09%13%13%1D4%EF%D9%B8%00%00%02%B5PLTE%00%00%00eeeeeeeeeeee2h%CC2i%D17e%BBeeeeeeeeeeeeOb%85eee2h%CC2i%D02g%C9eee2i%D12i%D15f%C0Vby9e%B6eee9e%B72h%CC2i%CE2h%CBAc%A32i%CD2i%D18e%B82h%CC2h%CD7f%BE3f%C7Fc%989f%B98e%B8Ic%95Af%A9Fc%99De%A3Bf%A9Cf%A7%3Ec%A92h%CC2i%D12h%CB2i%D22i%D02h%CA2f%C74g%C42f%C76f%C03e%C22i%D22g%CA3h%CB2h%CC2i%D04h%CA2h%CB4g%C64g%C72g%C92f%C82h%CB2h%CA2i%CE2j%D02i%CE2h%CC4i%CA2g%CB4i%CA2k%D52l%D72j%D34l%D3Ar%CD3l%D55l%D2%3Dp%CF5k%D1%3Dp%CF4k%D37s%E2%3Ew%E0%3Ew%E1%3Fw%DDFz%D9Fz%DCN~%D6W%84%D7H%7B%DA2o%DE2o%E06y%F57z%F48q%D99z%F19~%FC%3A%7F%FD%3B%7F%FD%3B%80%FF%3Cs%D8%3C%7F%FC%3C%81%FF%3D%82%FF%40u%D6%40%84%FFA%84%FDB%84%FFC%85%FDE%87%FFF%84%F6F%86%FCH%88%FCH%88%FFI%88%FCJz%D2M%85%EBM%85%ECP%8B%F8R%8C%F5V%8B%EFZ%8F%F1%5D%8F%ED%5D%91%F2%5E%92%F1%5E%94%F7%5E%97%FF_%92%F1%60%98%FFa%90%E7a%92%EDb%91%E9e%9B%FDf%9C%FFk%97%E8m%98%E7m%9E%F7p%A2%FCs%99%E1s%9B%E7s%9C%E8t%9C%E8t%9D%E8u%9E%EAv%A3%F7z%9C%DBz%A5%F3%7C%A0%E2%7D%A6%F3~%AB%FF%82%A5%E6%82%A6%E6%83%A9%EF%86%AC%EF%8A%AA%E5%8B%AC%E7%8C%AC%E7%8D%AD%E8%8E%AD%E5%91%AF%E8%92%B1%ED%93%B3%ED%94%B2%EA%99%B5%EA%9A%B5%E7%9B%B6%E5%9B%B7%EC%9D%B7%E7%9D%C0%FF%A0%BB%EC%A3%BB%E9%A7%BE%EA%AA%C1%EB%AC%C6%F6%B0%C5%EC%B4%C9%F0%B6%CA%EE%B8%CB%EF%B8%CC%EE%B9%CC%EF%BB%CE%F0%BE%D0%F2%C2%D3%F4%C3%D3%F1%C6%D6%F1%C8%D7%F2%C9%D7%F2%CC%DA%F3%D1%DD%F4%D2%DE%F5%D5%E0%F5%D6%E1%F5%D7%E1%F5%D7%E2%F5%D7%E2%F6%D9%E3%F5%DA%E4%F6%DE%EA%FF%DF%E8%F7%E0%E8%F7%E3%EB%F8%E4%EB%F8%E5%EC%F9%E7%ED%F9%E7%EF%FE%E8%F0%FF%E9%EF%FA%EB%F2%FE%ED%F2%FC%ED%F3%FD%EF%F3%FA%EF%F3%FB%F1%F4%FB%F1%F5%FB%F1%F5%FD%F1%F5%FE%F2%F5%FB%F3%F7%FE%F6%F9%FF%FA%FB%FE%FB%FC%FE%FC%FD%FE%FE%FE%FE%FF%FF%FF2%5C%EF%18%00%00%00atRNS%00%01%02%03%04%05%05%06%07%0B%0D%14%17%18%1A%1A%1C%1D%1F%23%2A%2A%2B%2B0334599%3C%3D%3D%3D%3ECMOQST%5B%60be%8F%8F%92%93%98%99%A1%A1%A2%AA%B0%B6%B9%BD%BF%BF%BF%C1%CA%CA%CC%D0%D6%D9%DD%DD%DE%E5%E5%E6%E6%E8%ED%EE%EE%EE%EF%F0%F0%F2%F2%F4%FD%FD%FD%FD%FD%FD%FD%FD%FE%D0%C0%95n%00%00%00%01bKGD%E6%C1lZ%05%00%00%01%92IDAT%18%19%05%C1%C9r%12A%00%80%E1%BF%A7%7BVv%26%11%14I%25%1A%0DQ%AB%F2%00%DE%F4%E2%BB%FA%16%1E%3D%A8%07%A5%AC%98%AD%A2%0C%09%C3%92%21%03%D3%CC%EA%F7%09%00%C0rkv%95m%92%1D%00%08%008%E84%3D%8B%2C%89%1Eo%0A%00%05%E0%1F%0C%EB%AF%DA%CF%CCpz%99%F6%EEnsP%40%F7%F5%E9%E8%CD%93%96E%B1%5E%9E%7F%F7%E4u%8E%04%FF%E4%F0%E3%D9%9E%1A%07A%D3%A8%F5%FB%81%CC%1E%2B%09%A7%EF%3E%1C%5B%C5%D5%C9%C8%FF%E5%16%A5%3BXG%CB%5C2%7C%7B6%12E%F0b_X%BA%28%F2%D2%11K%BDQf%C7%3D%2C%D3h%F0%14V%29%40%D1s%5BJ%B9%CD%237%D5%BD%21%D5%2C%28%A1z%B8%DDy%8D%B6%AAy%8D%94%BDc%28%2F%00p%03%84%5DW%B6%AD%B6%BD%97%80%7C%0F%40%1A%7D%13%964%20%8EL%05%00%00%96%2F%05%C2%C8%B2x~%AE%01%00%60%F9%5B%C8%BCT%9BdU%5E%C4%9F%7C%B2%CFs%80%3CW%91Ne%D5hvU2%1B8%D2%FF%BB%CA%2AC%28%19%CE%EEdQ%F3%FB%AE%93-%FAvctY%F3%3C%C7%2C%E7%D3%B9d%ED%F5%F7%3D%27%8F%3A%8Ey%E3x%8E-%C3%F1%24%91TY%9A%1EYf%F6%D0%1Dk%CBT%C6%D7%3F%8BPK%D0Z5%AD%BA%2A%26%89%92F4%F99%BD%DF%16%12%2A%AD%C3%F5%BF%9Em%08%E2%2FW%3F%16%F7I%8A%000%9C%E7%AD%86c%93%25%F1v%16%EFr%10%00%08%5B%B5%EBR%94i%A4%F3%5D%09%FC%07-%CA%B5%93%23%94%E6%F7%00%00%00%00IEND%AEB%60%82"
+             alt="back_img" title="Back" align="left" > </a> </td>
+                <td> <center> <a href="#Contents"> <img src="data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%16%00%00%00%16%08%06%00%00%00%C4%B4l%3B%00%00%04RIDATx%DA%8D%94mL%9BU%14%C7%3Bu%FA%C1%F8%CDD%B3h%FC%E0%B7%F1%C5%3C-cU%C01%0C%D9Lp%3Au%26%9A%A1%A3iy%5D%A6%C2D%AA%D9%14%81%A0L%19l%2A%8CA%40%C4%0D%C6%A6n%8E%97%10ys%19%AC%BC%C8%3B2%2C0%B6%D2%87%B6%B4%B4%F4%05J%9F%FE%BD%E7%C2h0%A3%DBI%FEy%EEs%9F%7B~%F7%3C%F7%9Esd%C1LH%1A%D8%2A%24%F5o%13%92%FA%E4Bbo%84%90%D8%C3%D4%AD%10%12n%3C%13%A6n~4%88kP%A8%92%A9%80%81%5B%85%E4~%BD%902%22%92%D8%26%93%0C%DE%CET%24%D7tF%AA%D5%EA%87%1F%14%F8%BC%904xJH%1D%9B%8F%CC%B8%25%1D%C8%B7%E1p%B9%07%A7%2F%9BP%D6%60%84%B6z%11%EF%16%D8%11%A3%FDWR%A4%0C9%85%04%5DS%98%A6%25%82m%F0H0%E8s%0CZ%2F%1C%99F%7C%E1%1C%EA%AE%BB1~%DB%05%DB%A2%17%97%AEY%B8%EC%AE%15L%8B%1E%B4%F4%3Bp%B4%DC%84%9D%1F%8D%83E%3F%AA%D44%C5%12%7C%B3H%EB%233%A6%A5%DC%3A%1B%06%27%5D%B8c%5E%82%C1%B2%BC%0At%AE%60%D1%ED%A31%CDq%DD%BC%E3FE%B3%05%7B%3E%BB%E9%17%12u%E3%3B%D5%8D%E1%0C%FE%D0%FF%C0%FD%C5%C2%91I%7CUc%C3%80%DE%89%B1%197%89%83%2Cv%2F%24%BF%9Fk%C1%B9Bsk%DF%5D%18%99v%A1%B4%C1%82%F0%B4%7F%20h%3A%7Fb%E0%27%98%B6%ACA%7B%95%F2%D4%11%DB%A1%93F4%F7-%A0k%CC%81%1BL%04%981-a%C5%E7%C7%5D%93%24%3FL6~4%B4%8E%EB%AF%21%3B%D2%CBD%84%A6%0E.%B0%A8%F71%F0c2%96B%5B%99%0A%5E%CE%D0K%A7%AE%CC%A3%B1%C7%8A%A6%1E%1Bw%D4%CFz%02%D0%80Q%E4%EBGDk%EBuV%94%D6%1B%D8%85%8EK%8A%84k%95%FB%E2s%9E%22%F06%A6%D6%D8%1C%0B%AA%9A%E7P%DBn%E6%0E%C3SN%F8Xt%C1l%CA%E8A%D1%EF%22%E2N%7B%F0z%FE%12%94Z%3BX%8E%F7D%A9%AAB%09%2Cg%B9%A9%3FT4%8F3W%8D%28o%14%D17%B1%C8%23%BD%9F%D1%C6%AD%C3%5E%BC%7D%12x%E9%0B%40y%CC%07%C63Dij%DE%24p%04%25~%CA%8F%22%BE%A95%E0%8F.%2B%96%BD%12%1E%D4%96%BC~Tv%AC%82_%3C.AH%1E%B2%EE%D6%D4%7C%B0%0E%3EX0%8F%B4R%23%BE%AE5%E1%7C%BB%0DWu%0Ex%96%03Q%DB%9C%12%A6%E6%24L%88%80%C7%0BngZ%80%CC%F3%40%7C%09%10%FE%25%83%AF%81%A35%E7%E2eT%FBT%A61%D9n%EC%3F%E1%C2%FE%FCU%25%97z%B0%E0%0A%80%CB%DA%B83%D7%F0mpK%AD%08%CCEd%B1%E7q%1F%3B%E3%EE%D9W%D4U%EF%C9%A8%A1P%ED%87i%9D%88%CE%91%D6%15%F7%83%C4%C0%08%80%5B7%07%EF%CA%06v3%ED%C8tA%D0t%F5%C7%A8%8A%A3e%D4%A5%A8%A1%84%A5%CDH%7B%F2%7C%D8%BB%26U%89%EF%BE%11%A7%FF%ECCL%AE%0F%E4G%22%C6%0EM%5B%ED%81%F8%CC%ED22%EAR%8A%D4%21kl%8E%19qEv%BC%CF%94%5E%E1%C0%AC%D5%07%87%5B%E2%E7%5B%DD%E1%C1%C1B%07%D7%C0%F4%0A%9F%CF%BE%E0%A4%B5%DC%87%7CCS%06%1C%91%AA%1A5%B3%A79%98Z%1F%AB%F5%92%5DGGq%B8%D8%88%F4%B3%22%3E%29%17%91%5BcF%5E%AD%19%99%95%22U%16%CDse%9D3%21%EF%82%19%9FV%F0w%EEC%BEru%C7o%8C%15%C2%F4%B8%EC%AE%85j%DA%B6%CB%13%BB%FF%7C%ED%D8%A8%F4y%C5%0C%B2%AAg7%EA%97%0D%E3%F5wZK%3E%8A%84N%5D%8C%AA%E4-%06%7DrC%23%A2%17%A5%BA%3ED%91%A8k%7DU%3B%88%B4%92%5B8Qg%C4%B7%17%C5%7B%8A%BE%D1%1AZ%ABH%B8%AE%DB%AB%FA%FE%0D%C6x%F6%9E%AD%93%8ED%A9nx%81u%A9%CA%88%0F%FF%5Ex%27%7BL%D2%9E%9D%C0w%17%0D%28%FCU%24%F11%CD%D17%B6%C6A%BFO%91%12%947%9F%CD%8C%22%A7%D6G%5D%8A%1A%0A%D5%BE%22Ig%88%FA%B8%D7Jb%E3YJ%29%BA%FD%B5%8B%0A%A1%DF%DF%10i%10%F8%16%DA%9D%BA%145%14%AA%7D%2AS%AA%28J~%CASJ%29%BA%7D%BA%A8%C0%99%06%EC%3F%1BA%80%AFy%87%9C%AB%00%00%00%00IEND%AEB%60%82"
+              alt="contents_img" title="Contents" align="center" > </a> </center> </td>
+                <td> <a href="#"> <img src="data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%16%00%00%00%16%08%06%00%00%00%C4%B4l%3B%00%00%04AIDATx%DA%95%94kP%94U%18%C7W%CB%FC%D0%F8%AD%99%1A%A7%A6%0F%7D%93%2F%CD%BB%8B%B8%05%24R%0C%3A%A1v%B3%99%1A-%60v%D9%15%1C%2Bt%C8%AD%D1%22%A0%02%14A%9B%20%84%C1H%0C%C31o%20%B3%CAE%1D%81%05%14%D8%B8%E6%12%90%7BA%D8%5DvaY%A0%7D%F9%F7%3C%AF%EB%E2%0E%D2%C4%99%F9%CD%7B9%E7%FC%DE%F3%9E%F3%3C%8F%EC%BF%9A%A0%ED%5C%25h%3B%D6%0A%DA%DBrA%D3%1E%21h%DA%88V%85%90%D4%F2%7C%98J%FF%94J%A5%92-%B7%B1TI%E4%91%B8%5E%D8%DDa%12%92%BBm%0C%7Dd%90%E4%8DD%81%5C%DD%14I%F2%27%88%FF%25%7CI%D0v%1D%13Rz%ED%91i%C3%E2%8E%1C%27%F6%94zq%FC%C2%7D%94%D4X%A1%3B5%89%0F%F2%5C%88%D1%DD%15%15%C9%C6%29%21%C9P%1B%A6%AE%8B%20%F9%93%C4%92%D2%17IZ-%EC%1DBB%FE%28%AAnM%A3%FFo%0F%9C%93sp%7B%FE%91p%11C6%2F%EA%3A%DC%D8_z%1F%1B%3E%ED%07%AD%BEG%A9%AE%8Dc%F9R%2B%AD%8EL%1B%12%B3%AA%9C%E8%1A%F4%E0%DE%D8%0C%CC%E3%B30Yf%F0K%C3%94%C4%5D%8B%F4Nb%E0%DE4%CA%F4%E3%88%FDb%60%5E%D0%18%FA7%A8%AE%84%93%7C%25%F1%A8%B8%A3P%D8%3B%88o%2A%9D%E84M%A1wd%3A%40K%DF4%2C%0E%9FDE%E3%24%8C%7Fy%FC%7D%1Et%0FyP%5C3%8E%F0%D4%3E%08%EA%A6%9FI%BA%86X%E1%97%B6%2B%E5%29%DD%CE%F8%A3V%E8oO%A0%B9%D7%8D%16%A2%D9%8F%C9%E2%C5%C3fw%8B%28%D1%BBq%F3%8F%85%FE%1BF%17%F6%95%D8%10%9A%D25A%AB%DEF%E2%D52%0A%A1UD%DEki%26%F1%D8E%3B%AE%B49P%DB%E6%0C%A2%A9%C7%0D%8FW%0C%C8G%27%7C%24w%E1R%CB%83%FEj%83%03%C5%D5f%3A%D0~Q%91t%F3%E4%B6%84%CCgY%BC%96%A8%8F%CB%1CG%B9~%14%95%0Dc%A8%A8%1B_%C4%C5f%27f%E6%E6%83%E4y%E7%1D%C8%FE%CD%8A%5D%C7%BD%D8%9E3%03%A5%CE%05%8A%F1%B6%A8%C4%F2P%16%CB%296M%F1%05v%FCt%D9%8A%23%E7%C6Pru%EA%B1%5C%ED%94%B6%24h%5BRJg%F1%EAW%90P%1E%F4%81%7C%E6%28u%E5%3B%2C%8E%E0%C0O%FE%D1%86%EC3f%DC1%CD%609mx%0Cx%2F%FF%81%F8%95C%22%84%DDF%C7%26u%E5%C7%01%F1%CE%3C%3BR%8B%AD%B0O%FA%B0%DC%16_%04%84%7FMr%BF8Z%7D%3AA%C6%B9%CFi%1A%931%8D%B7s%29t%AE-O%7C%BD%0F%D8%92%0DD%A4%93%FC%90%8F%F6%B8%D5%F2%BA%AA%FCC%19%17%14%CE%FD0%DD%14%A23E%BC%91%25bk%EE%BC%1FH%BC%99%03%C4~%0F%94%DF%08%96%EA%8D%C0%A6L%60c%06%5D%89%F5%07%3C%14%CB%CD%1D1%89%85%D12%AER%5CP%C2RG%C4%D8%EF%7C%D8%1C%0CM%98Gd%3A%F0%ED%85%60i%D3%80%88%ED%87%7D%88%C9%F2%81%E71%ECX%AFn8%B3%23%E1%C0%3A%19%A7%1FW%29E%8A%D1%11%979%86%5D%05.%7C%F4%08%3B%F3%5D8z%C9%0B%EF%DC%82%D400%0BM%D1%C2%18%9E%C3sC%93%3B%DD%91%89%95%2Aj%CF%C9%B8q%E9%A3%5C%2F%DA%B8%BF%07%7B%0A%AD%D8w%C2%C6%99%C4W%89_%1B%5D%01i%F7%B0%17%9F%97%8Dr%7F%60%0C%CF%E1%B9r%D5%F5%DF%C9%15B%3C%FDP%2C%0BU7%AC%93kZ%AFm%3D%D8%23~Y6%82%F4S%96%00%B9U6%F4%90%90%E1%FB%F4%0A%0B%23%F5%F1X%9E%A3Hj2%C4%24%16%BDK%AEg%88%95%81%22%C4%0FJUu%88Bc%A8%DF%A2%EBBj%D10I%AC8%7C%D6%F6X%B8%8F%C7%F0XE%D2-%C3%E6%C4%1F%DE%22%C7%0B%8B%EA2%3F%F0%96%28U5%2FS%95%3A%19%F1%C9%9D%89%F73zE%DD%89%3Fq%E4%AC%19%F9%E7l%8Ct%CF%EF%B8%8F%C6%B8%F9%F7y%A5~%E9%EA%25%8B%BD%BF%9E%AE%E1%2A%C5%05%85s_%A15%98%A3%3Ekw0to%E1%90%E2%D3%F7%1FT%08%FF~%D0J%97%103%2B%F8%EB%5C%A5%B8%A0p%EEs%9ArFq%F0s%9CrH%F1%E9%F3A-%2A%EE%D4%FE%05%83%24%8Fy%22%04QP%00%00%00%00IEND%AEB%60%82"
+               alt="next_img" title="Next" align="right" > </a> </td>
+            </tr>
+    
+        </table>
+    
+</body>
+</html>
