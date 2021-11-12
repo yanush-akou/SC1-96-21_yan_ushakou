@@ -167,12 +167,12 @@
         <tr>
             <td>
                 <form id="upload_form" name="uploadForm" method="post" action="http://fe.it-academy.by/TestForm.php"
-                enctype="multipart/form-data">
+                >
                     <legend>Upload</legend>
                     <fieldset>
-                        <span>Файл:</span>
-                        <input type="file" name="file_Field" dir=“ltr”>
-                        <input type="submit" id="submit1" > <label for="submit1">No file chosen</label> <br>
+                        <span>Файл:</span> <br>
+                        
+                        <input type="submit" id="submit1" value="Choose file" > <label for="submit1">No file chosen</label> <br>
                         <span>Срок хранения (года):</span> <br>
                         <input type="text"> <input type="submit" value="загрузить" > <br>
                         <p>Метод POST <br>
@@ -188,17 +188,17 @@
             </td>
             <td>
                 <form name="validation_form" id="validationForm1" method="post"  action="http://fe.it-academy.by/TestForm.php">
+                <fieldset>
                     <legend>Строка поиска</legend>
-                    <input type="text" name="seachField" id="seachField1" value="Только русские буквы" pattern="[А-Я][а-я]{.100}" ><br>
-                    in
+                    <input type="text" name="seachField" id="seachField1" value="Только русские буквы" pattern='[А-Яа-я]+'> <br>
+                    
                     <p><i>Телефонный номер в формате <br>
                     +ХХХ-ХХ-ХХХХХХХ, где Х - любое число</i></p>
-                    <input type="text" name="tel" id="tel1" pattern="\+375\-[0-9]{2}\-[0-9]{7}\"  ><br>
-                    <input type="tel" value="+375-29-1234567
-                    " name="tel" id="tel1" pattern="\+375\-[0-9]{2}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}" > <br>
+                    <input type="tel" name="tel" id="tel1" placeholder="+375-29-1234567" autocomplete="off" pattern="[\+]\d{3}[\(]\d{2}[\)]\d{7}">  <br>
+                    <!--НЕ РАБОТАЕТ ВАЛИДАЦИИ НОМЕРА ТЕЛ-->
                     <input type="submit" value="Проверить" >
-
-
+                </fieldset>
+                
 
                 </form>
 

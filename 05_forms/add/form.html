@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Form</title>
+</head>
+<body>
+    <H1>Заполните анкету</H1>
+    <form action="http://fe.it-academy.by/TestForm.php">
+        <fieldset>
+            <legend>Личные данные</legend>
+            <input type="text" value="Фамилия" id="last_name" autofocus required pattern="[А-Яа-я]{1,25}" >
+                <label for="last_name">text: Только кириллица, без пробелов, длина поля 25, обязательное поле. автофокус на данном поле</label>
+                <!--ХЗ как сделть без пробелов--> <br>
+            <input type="text" value="Имя" id="first_name"  required pattern="[А-Яа-я]{1,20}" >
+                <label for="first_name">text: Только кириллица, без пробелов, длина поля 25, обязательное поле</label> <br>
+            <input type="text" value="Отчество" id="father_name"  required pattern="[А-Яа-я]{1,24}" >
+                <label for="first_name">text: Только кириллица, без пробелов, длина поля 25, обязательное поле</label> <br>
+                <fieldset>
+                    <legend>Паспортные данные</legend>
+                    <p>text: Серия - только заглавные две латинские буквы с длиной 2 и максимальным количеством символов 2, количество букв не менее 2, обязательное поле <br>
+                       text: Номер паспорта - только цифры с длиной 7 и максимальным количеством символов 7, количество цифр не менее 7, обязательное поле </p>
+                    <input type="text" name="Serium" pattern="[A-Z]{2.2}" required value="AA"size="2">
+                    <input type="text" name="Number" pattern="[0-9]{7.7}" required size="6">
+        
+        
+                </fieldset>
+                <fieldset>
+                    <legend>Дата рождения</legend>
+                    <input type="text"size="4" value="2000" pattern="[0-9]{4.4}" id="bdate" > <label for="bdate">text: Год рождения 4-е цифры</label> <br>
+                    <select name="birthmonth" id="birthmonth">           
+                        <option value="0" selected >Январь</option>
+                        <option value="1">Февраль</option>
+                        <option value="2">Март</option>
+                    </select>
+                    <label for="birthmonth" >select: Месяц рождения </label> <br>
+                    <input type="number" min="1" max="31" step="1" id="range" > <label for="range">number:Диапазон от 1 до 31 с шагом 1</label> 
+                </fieldset>
+                <select name="nationality" id="nationality" required>
+                    <option value="0" selected >РБ</option>
+                    <option value="1">не РБ</option>
+                </select><label for="nationality">(Национальность - выбор одного значения из списка, обязательное поле)</label>
+                <br>
+                <span>Адрес:</span> <br>
+                <textarea name="Adress" id="Adress" cols="20" rows="2"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Интересы</legend>
+                <fieldset>
+                    <legend>array: Хобби</legend>
+                    <input type="checkbox" name="hobby[]"> Рыбалка <br>
+                    <input type="checkbox" name="hobby[]"> Астрономия <br>
+                    <input type="checkbox" name="hobby[]"> Дайвинг <br>
+                    <input type="checkbox" name="hobby[]"> Марки <br>
+                    <!--Зачем в LABEL заворачивать?? без них пока-->
+                </fieldset>
+                <fieldset>
+                    <legend>Домашние животные (возможность выбора нескольких вариантов):</legend>
+                    <span>array: select multiple</span> <br>
+                    <select name="Petslist" id="Petslist" multiple size="12" >
+                        <optgroup label="Попугаи">
+                              <option value="1">Волнистый</option>
+                              <option value="2">Ара</option>
+                              <option value="3">Неразлучник</option>
+                        </optgroup>
+                        <optgroup label="Рыба">
+                              <option value="4">Караси</option>
+                              <option value="5">Окуни</option>
+                              <option value="6">Осётры</option>
+                        </optgroup>                        
+                        <optgroup label="Птицы">
+                            <option value="4">Стая ворон</option>
+                            <option value="5">Аист</option>
+                            <option value="6">Археоптерикс</option>
+                      </optgroup>
+                        </select>
+                        
+                </fieldset>
+                
+
+
+            </fieldset>
+            <fieldset>
+                <legend>Данные для входа и восстановления пароля</legend>
+                <input type="text" id="login" value="Логин" name="login" required size="20" pattern="^[^\s()-]*$[A-Za-z]{20.5}" >
+                <label for="login">text: Только литиница, без пробелов, не менее 5 символов, длина поля 20, обязательное поле)</label>
+                <!--А что за длина поля 20??? SIZE???-->
+                <!--ХЗ как сделть без пробелов-->
+                <br>
+                <input type="text" name="psw" id="psw" value="Пароль" autocomplete="off" pattern="^[^\s()-]*$[A-Za-z]{20.10}" >
+                <label for="psw">password: Только латиница, без пробелов, не менее 10 символов, длина поля 20, обязательное поле, отключить автозаполнение </label>
+            </fieldset>
+            <fieldset>
+                <legend>Координаты:</legend>
+                <input type="email" value="Введите адрес почты" id="emailaddress" name="email"> <label for="emailaddress">email: Проверка должна осуществляться при помощи новых атрибутов тега &ltinput&gt </label> 
+                <br>
+                <input type="url" value="Введите адрес сайта" id="siteaddress" name="site" > <label for="postaddress">url: Проверка должна осуществляться при помощи новых атрибутов тега &ltinput&gt</label>
+            </fieldset>
+            <fieldset>
+                <legend>Цифры</legend>
+                <input type="number" min="-2.5" max="2.5" step="0.1" id="number" >
+                <label for="number">number: Диапазон от -2.5 до 2.5 с шагом 0.1</label>
+                <br>
+                <input type="range" min="1" max="10" id="range">
+                <label for="range">range: Максимальное 10 Минимальное 1</label>
+                <fieldset>
+                    <legend>Кнопки управления</legend>
+                    <input type="submit"> <input type="reset"> <br>
+                    <input type="image" src="letter_button.gif" id="pic" disabled>
+                    <label for="pic">- при нажатии на эту кнопку ничего не происходит</label>
+                </fieldset>
+                
+            </fieldset>
+        
+
+
+    </form>
+
+    
+</body>
+</html>
