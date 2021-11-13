@@ -1,0 +1,10 @@
+h1{
+    font-weight:bold;font-size:x-large;
+}
+p.letter{
+    font-family: 'Caveat', cursive;
+}
+p.dear{
+    text-decoration: underline;
+}
+
