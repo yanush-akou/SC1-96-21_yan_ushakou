@@ -1,0 +1,49 @@
+.wrap{
+    width: 70%;
+    margin: 0 auto;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+}
+
+.navigation{
+    background-color: #ddd;
+    flex: 0 0 15em;
+}
+
+.contentsArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Article{
+    background-color: #bbb;
+    margin: 0 0 .2em 0;
+
+}
+
+.text{
+    padding: 0 10px 0 0;
+}
+
+.Article_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.icon{
+    align-self: flex-end;
+    float: right;
+}
+
+.footer{
+    background-color: #ddd;
+}
