@@ -15,7 +15,8 @@
 
 .navigation{
     background-color: #ddd;
-    flex: 0 0 15em;
+    flex: 0 0 10em;
+    flex-shrink: 0;
 }
 
 .contentsArea{
@@ -46,4 +47,5 @@
 
 .footer{
     background-color: #ddd;
+    clear:both
 }
