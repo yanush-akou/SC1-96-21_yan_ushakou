@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{height: 300px; width: 300px; border-style: groove;}
+        tr.lineBlack>td:nth-child(odd){width: 10px; height: 10px; background-color: gray;}
+        tr.lineWhite>td:nth-child(even){width: 10px; height: 10px; background-color: gray;}
+        body{counter-reset: heading 65}
+        td::before{counter-increment:heading -1;
+                    content:  counter(heading);}
+
+    </style>
+
+
+</head>
+<body>
+    <table>
+        <tr class="lineBlack">
+            <td> <div></div> </td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr class="lineWhite">
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr class="lineBlack">
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr class="lineWhite">
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr class="lineBlack">
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr class="lineWhite">
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr class="lineBlack">
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr class="lineWhite">
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
